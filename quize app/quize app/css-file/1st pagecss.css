@@ -1,0 +1,489 @@
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+html{
+    
+        font-size: 106.1%;
+    
+}
+body{
+    background-color: #CCE2C2;
+    font-family: sans-serif,'Poppins';
+}
+.quize-container{
+    max-width: 800px;
+    max-height: auto;
+    margin: auto;
+    padding: 10px 70px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.image{
+    width: auto;
+    height: 59px;
+   
+ 
+    
+}
+ img{
+ height: 100%;
+ 
+}
+
+.scor{
+    display: block;
+    width:70px;
+    text-align:center;
+    border-radius: 4px;
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.7);
+    background-color: #FEC33D;
+    color: #000000;
+    padding: 5px;
+    font-size: 21px;
+    
+}
+
+.scoreup{
+    display: flex;
+    justify-content:flex-end;
+    align-items: flex-end;
+}
+    
+
+.question{
+     background-color:  #F5F5F57A;
+     font-size:20px;
+     border-radius: 13px;
+      padding: 25px;
+}
+
+.time{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+}
+.timer{
+    background-color:#02A4096E;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    color: #FFFFFF;
+    border: none;
+    padding:10px 16px;
+    border-radius: 4px;
+    font-size: 18px;
+}
+.option-container {
+    padding: 15px 25px;
+    border-radius: 13px;
+    background-color: #F5F5F57A;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 14px;
+    max-width: 100%;
+}
+
+.option-button {
+    border: solid 3px #D9D9D9;
+    padding: 11px;
+    cursor: pointer;
+    text-align: left;
+    width: 100%; 
+    font-size:16px;
+    box-sizing: border-box; 
+}
+
+.next{
+    display: flex;
+    justify-content: flex-end;
+    font-size: 19px;
+    color:green;
+    cursor: pointer;
+}
+.soundicon{
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+.soundicon img{
+    width: 31px;
+    height: 30px;
+   font-size: 20px;
+    color: black;
+}
+#audio-image2{
+    display: none;
+}
+.showicon #audio-image2{
+    display: block;
+}
+.showicon #audio-image{
+    display: none;
+}
+
+@media (max-width:500px) {
+    html{
+        font-size: 106.1%;
+    }
+    .option-container{
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+        padding: 16px 14px;
+    }
+    .question{
+        font-size: 18px;
+    }
+    .option-button{
+        font-size: 16px;
+    }
+    .quize-container{
+        padding: 10px 54px;
+    }
+
+}
+@media (max-width:400px) {
+    html{
+        font-size: 106.1%;
+    }
+    .option-container{
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+        padding: 16px 14px;
+    }
+    .question{
+        font-size: 16px;
+    }
+    .option-button{
+        font-size: 16px;
+    }
+    .quize-container{
+        padding: 10px 27px;
+    }
+    .soundicon img{
+        width: 24px;
+        height: 24px;
+       
+        color: black;
+    }
+    .timer{
+        padding:6px 11px;
+        font-size: 17px;
+    }
+    .scor{
+        display: block;
+        width:59px;
+        text-align:center;
+        border-radius: 4px;
+        box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.7);
+        background-color: #FEC33D;
+        color: #000000;
+        padding: 3px;
+        font-size: 21px;
+        
+    }
+
+}
+body{
+    background-color: #CCE2C2;
+    font-family: sans-serif,'Poppins';
+}
+.progress-baar{
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+gap:30px;
+width: 100%;
+margin: auto;
+}
+.prog-image{
+    max-width: 243px;
+    max-height: 160px;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.prog-image img{
+    width: 100%;
+}
+.prog-image p{
+  font-size: 28px;
+  font-weight: 600;
+  text-align: center;
+}
+.result{
+   width:500px;
+    background-color: #FF7A7A;
+    height: 104px;
+    border-radius: 10px;
+  
+    
+}
+.result .baar{
+    width: 0;
+    background-color: #35BD3A;
+    height: 104px;
+    border-radius: 10px;
+    
+}
+.vector-green{
+margin-left: -30px;
+margin-top: -89px;
+height: 69%;
+
+
+}
+.vector-5{
+margin-left :455px;
+margin-top:50px;
+height: 66%;
+
+}
+
+.marks{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:230px;
+    margin-top: 27px;
+    font-size: 20px;
+    font-weight: 600;
+} 
+.suggest-btn{
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+    flex-direction: column;
+}
+.suggest-btn button{
+   width:140px;
+   padding: 10px;
+   font-size: 20px;
+    background-color: #35BD3A;
+    border: none;
+    color: #FFFFFF;
+    font-weight: 600;
+
+} 
+@media (max-width:1221px) {
+    .result{
+        width:464px;
+        
+         
+     }
+     .vector-5{
+        margin-left :416px;
+        
+        }
+        .marks{
+           
+            gap:209px;
+           
+        } 
+}
+@media (max-width:1075px) {
+    .result{
+        width:500px;
+        
+    }
+}
+@media (max-width:1090px) {
+    .result{
+        width:500px;
+        
+    }
+    .vector-5{
+        margin-left :450px;
+
+        
+        }
+        .marks{
+            gap: 230px;
+        }
+}
+ @media (max-width:593px) {
+    .result{
+        width:464px;
+         
+     }
+     .vector-5{
+        margin-left :426px;
+        
+        }
+        .marks{
+           
+            gap:209px;
+           
+        } 
+}
+@media (max-width:578px) {
+    .result{
+        width:408px;
+         
+     }
+     .vector-5{
+        margin-left :363px;
+
+        
+        }
+        .vector-green{
+            margin-left: -31px;
+        }
+        .marks{
+           
+            gap:185px;
+            font-size: 18px;
+           
+        } 
+}
+@media (max-width:500px) {
+    .result{
+        width:408px;
+         
+     }
+     .vector-5{
+        margin-left :358px;
+
+        
+        }
+        .vector-green{
+            margin-left: -25px;
+        }
+        .marks{
+           
+            gap:180px;
+            font-size: 18px;
+           
+        } 
+}
+@media (max-width:490px) {
+    .result{
+        width:359px;
+         
+     }
+     .vector-5{
+        margin-left :309px;
+        margin-top: 48px;
+
+
+        
+        }
+        .vector-green{
+            margin-left: -25px;
+        }
+        .marks{
+           
+            gap:163px;
+            font-size: 18px;
+           
+        } 
+        .suggest-btn{
+            font-size: 19px;
+        }
+}
+@media (max-width:470px) {
+    .result{
+        width:307px;
+         
+     }
+     .vector-5{
+        margin-left :266px;
+        margin-top: 48px;
+
+
+        
+        }
+        .vector-green{
+            margin-left: -35px;
+        }
+        .marks{
+           
+            gap:142px;
+            font-size: 18px;
+           
+        } 
+        .suggest-btn{
+            font-size: 16px;
+        }
+        .prog-image{
+            max-width: 219px;
+        }
+}
+@media (max-width:418px) {
+    .result{
+        width:258px;
+         
+     }
+     .vector-5{
+        margin-left :212px;
+        margin-top: 48px;
+
+
+        
+        }
+        .vector-green{
+            margin-left: -32px;
+        }
+        .marks{
+           
+            gap:118px;
+            font-size: 18px;
+           
+        } 
+        .suggest-btn{
+            font-size: 16px;
+        }
+        .prog-image{
+            max-width: 219px;
+        }
+        .suggest-btn button{
+            width: 126px;
+        } 
+}  
+@media (max-width:355px) {
+    .result{
+        width:220px;
+         
+     }
+     .vector-5{
+        margin-left :174px;
+
+        
+        }
+        .vector-green{
+            margin-left: -29px;
+            margin-top: -92px;
+        }
+        .marks{
+           
+            gap:103px;
+            font-size: 15px;
+           
+        } 
+        .prog-image img {
+            width: 69%;
+        }
+        .prog-image p {
+            font-size: 20px;
+            
+        }
+}
