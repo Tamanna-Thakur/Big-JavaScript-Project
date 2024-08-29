@@ -201,7 +201,7 @@ const quizedata = [
 ];
 
 let currentquize = 0;
-let score = 0;
+let score = 1;
 let userScore = 0;
 
 //update the local storage
@@ -216,7 +216,20 @@ function loadUserScore() {
     userScore = parseInt(savedScore);
   }
 }
+//save question number
 
+function saveQueScore(){
+  localStorage.setItem('QueScore',score);
+}
+
+function loadsaveQueScore(){
+  const quesScore=localStorage.getItem('QueScore');
+  if(quesScore){
+    score=parseInt(quesScore)
+    scoreupdate.innerText = `${score}/${quizedata.length}`;
+
+  }
+}
 //save quize state
 
 function savequizedata() {
@@ -238,6 +251,7 @@ function loadquizestate() {
 window.addEventListener("load", () => {
   loadquizestate();
   loadUserScore();
+  loadsaveQueScore();
   loadquestion();
 });
 
@@ -269,7 +283,8 @@ function updatetimer() {
   } else {
     clearTimeout(timerstop); // Stop the timer when time runs out
     alert("time is up");
-    funloadquestion(); // Call your function when time runs out
+    funloadquestion();// Call your function when time runs out
+   
   }
 }
 
@@ -319,10 +334,7 @@ const chooseCorr = () => {
         savequizedata(currentquize);
       }
       disabledOp();
-      score = score + 1;
       saveuserscore(userScore);
-
-      scoreupdate.innerText = `${score}/${quizedata.length}`;
     });
   });
 };
@@ -350,29 +362,37 @@ const reset = () => {
 
 function funloadquestion() {
   currentquize++;
-  if (currentquize < quizedata.length) {
+  if (currentquize <quizedata.length) {
+    score++;
+    scoreupdate.innerText = `${score}/${quizedata.length}`;
     reset();
     loadquestion();
     enabledOp();
     resettimer();
+    saveQueScore(); //save question number
     savequizedata(); // Save state after moving to the next question
+    
+
   } else {
     localStorage.removeItem("quizestate");
     localStorage.removeItem("LastScore");
+    localStorage.removeItem('QueScore');
+ 
+
   }
 
   if (currentquize > quizedata.length) {
     document.body.innerHTML = `
      <div class="progress-baar">
       <div class="prog-image">
-          <img src="/quize app/img/Group 4.png" alt="">
+          <img src="/Group 4.png">
           <p>Result</p>
       </div>
   
      <div class="result">
+      <img class="vector-green" src="/Vector 4 (2).png">
       <div class="baar">
-           <img class="vector-5" src="/quize app/img/Vector 5 (1).png">
-          <img class="vector-green" src="/quize app/img/Vector 4 (2).png">
+           <img class="vector-5" src="/Vector 5 (1).png">
       </div>
      </div>
      <div class="marks">
@@ -432,9 +452,9 @@ const soundIcon = document.querySelector("#audio-image");
 soundIcon.addEventListener("click", () => {
   if (audio.paused) {
     audio.play();
-    soundIcon.src = "/quize app/img/sound.jpeg"; // Change this to the path of your soundon icon
+    soundIcon.src = "/sound.jpeg"; // Change this to the path of your soundon icon
   } else {
     audio.pause();
-    soundIcon.src = "/quize app/img/soundof.jpeg"; // Change this to the path of your mute icon
+    soundIcon.src = "/soundof.jpeg"; // Change this to the path of your mute icon
   }
 });
